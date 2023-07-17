@@ -1,15 +1,14 @@
 package com.sportstore.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -24,6 +23,8 @@ public class Product {
     private String description;
     private String image;
     private BigDecimal price;
+    @ManyToMany(mappedBy = "products")
+    private List<Order> orders = new ArrayList<>();
 
     public Product(String name, String description, String image, BigDecimal price) {
         this.name = name;
