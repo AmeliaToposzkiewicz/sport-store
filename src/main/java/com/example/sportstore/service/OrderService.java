@@ -26,7 +26,7 @@ public class OrderService {
                 orderDto.getStreet(), orderDto.getStreetNo(), orderDto.getHomeNo());
         order.setPrice(shoppingCart.getTotalCost());
         List<Long> productIds = shoppingCart.getProducts().stream().map(ProductDto::getId).toList();
-        List<Product> orderedProducts = productRepository.findProductsByIds(productIds);
+        List<Product> orderedProducts = productRepository.findProductByIdIn(productIds);
         order.setProducts(orderedProducts);
         orderRepository.save(order);
         shoppingCart.clearShoppingCart();
