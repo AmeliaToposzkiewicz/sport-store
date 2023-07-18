@@ -1,4 +1,4 @@
-package com.sportstore.dto;
+package com.example.sportstore.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

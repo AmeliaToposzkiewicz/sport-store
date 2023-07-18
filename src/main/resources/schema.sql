@@ -1,5 +1,4 @@
-drop table if exists product;
-create table product
+create table if not exists product
 (
     id          BIGINT PRIMARY KEY AUTO_INCREMENT,
     name        varchar(100),
@@ -7,8 +6,8 @@ create table product
     image       varchar(45),
     description varchar(600)  not null
 );
-drop table if exists `order`;
-create table `order`
+
+create table if not exists `order`
 (
     id                 BIGINT PRIMARY KEY AUTO_INCREMENT,
     customer_full_name varchar(100)  not null,
@@ -20,8 +19,8 @@ create table `order`
     home_no            varchar(5),
     price              decimal(9, 2) not null not null
 );
-drop table if exists order_product;
-create table order_product
+
+create table if not exists order_product
 (
     order_id   bigint not null,
     product_id bigint not null,

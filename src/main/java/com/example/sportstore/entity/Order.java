@@ -1,4 +1,4 @@
-package com.sportstore.entity;
+package com.example.sportstore.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
