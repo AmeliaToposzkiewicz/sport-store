@@ -30,6 +30,6 @@ public class ProductController {
         model.addAttribute("products", productsFromDb);
         int cartSize = shoppingCart.getCartSize();
         model.addAttribute("cartSize", cartSize);
-        return "show-all-products";
+        return "products";
     }
 }
