@@ -1,11 +1,11 @@
 insert into product(name, price, image, description)
-values('Ciężarki', 24.99, 'dumbbells.png', 'Zestaw 3 ciężarków: 5, 10 i 15 kilogramów. Kolor: czarny.');
+values('Czepek', 24.99, 'swimming-cap.png', 'Czepek do pływania dla dorosłych. Kolor: niebieski.');
 
 insert into product(name, price, image, description)
 values('Piłka do piłki nożnej', 59.95, 'football-ball.png', 'Czerwono-czarna piłka do piłki nożnej.');
 
 insert into product(name, price, image, description)
-values('Mata', 35.50, 'gym-mat.png', 'Fioletowa mata idealna na siłownię lub jogę.');
+values('T-shirt', 35.50, 't-shirt.png', 'Czarna prosta koszulka z bawełny.');
 
 insert into product(name, price, image, description)
 values('Skakanka', 9.99, 'jumping-rope.png', 'Biała skakanka z zielonymi rączkami. Długość odpowiednia dla dorosłych.');
