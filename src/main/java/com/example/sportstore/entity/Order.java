@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+@Table(name = "indent")
 @Entity
 @Getter
 @Setter
@@ -36,8 +37,8 @@ public class Order {
 
     private BigDecimal price;
     @ManyToMany(cascade = CascadeType.PERSIST)
-    @JoinTable(name = "order_product",
-            joinColumns = @JoinColumn(name = "order_id"),
+    @JoinTable(name = "indent_product",
+            joinColumns = @JoinColumn(name = "indent_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id"))
     private List<Product> products = new ArrayList<>();
 

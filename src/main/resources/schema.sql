@@ -1,6 +1,4 @@
-drop table if exists order_product;
-drop table if exists product;
-create table product
+create table if not exists product
 (
     id          BIGINT PRIMARY KEY AUTO_INCREMENT,
     name        varchar(100),
@@ -9,8 +7,7 @@ create table product
     description varchar(600)  not null
 );
 
-drop table if exists `order`;
-create table `order`
+create table if not exists indent
 (
     id                 BIGINT PRIMARY KEY AUTO_INCREMENT,
     customer_full_name varchar(100)  not null,
@@ -23,10 +20,10 @@ create table `order`
     price              decimal(9, 2) not null not null
 );
 
-create table order_product
+create table if not exists indent_product
 (
-    order_id   bigint not null,
+    indent_id   bigint not null,
     product_id bigint not null,
-    FOREIGN KEY (order_id) REFERENCES `order` (id),
+    FOREIGN KEY (indent_id) REFERENCES indent (id),
     FOREIGN KEY (product_id) REFERENCES product (id)
 );
