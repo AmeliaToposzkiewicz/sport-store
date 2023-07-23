@@ -31,6 +31,12 @@ public class ShoppingCart {
         totalCost = totalCost.add(price);
     }
 
+    public void removeFromCart(ProductDto productDto){
+        products.remove(productDto);
+        BigDecimal price = BigDecimal.valueOf(Double.parseDouble(productDto.getPrice()));
+        totalCost = totalCost.subtract(price);
+    }
+
     public int getCartSize() {
         if (CollectionUtils.isEmpty(products)) {
             return 0;

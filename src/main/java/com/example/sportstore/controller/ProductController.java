@@ -32,4 +32,9 @@ public class ProductController {
         model.addAttribute("cartSize", cartSize);
         return "products";
     }
+    @GetMapping
+    @RequestMapping("/summary")
+    public String showSummary() {
+        return "summary";
+    }
 }
