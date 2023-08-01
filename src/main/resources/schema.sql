@@ -27,3 +27,13 @@ create table if not exists indent_product
     FOREIGN KEY (indent_id) REFERENCES indent (id),
     FOREIGN KEY (product_id) REFERENCES product (id)
 );
+
+create table if not exists user
+(
+    id              BIGINT PRIMARY KEY AUTO_INCREMENT,
+    username        varchar(100) not null,
+    password        varchar(100) not null,
+    enabled         bit(1)       not null,
+    last_login_date datetime,
+    authority       varchar(100) not null
+);

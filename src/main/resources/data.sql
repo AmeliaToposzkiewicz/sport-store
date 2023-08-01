@@ -12,3 +12,6 @@ values('Skakanka', 9.99, 'jumping-rope.png', 'Biała skakanka z zielonymi rączk
 
 insert into product(name, price, image, description)
 values('Skarpetki', 47.75, 'socks.png', 'Zestaw 3 par skarpet: białe, szare i czarne.');
+
+insert into user (username, password, enabled, authority)
+values ('admin', '$2a$12$GIufZ0iBA8yH9kZoa07YcehYs8xnzzmBbtL3Er6xeuosAnTya7Wqm', 1, 'ADMIN');
