@@ -51,4 +51,8 @@ public class ProductService {
         return new ProductDto(product.getId(), product.getName(), null,
                 null, product.getPrice().toString());
     }
+
+    public void removeProductById(Long productId) {
+        productRepository.deleteById(productId);
+    }
 }
