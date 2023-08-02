@@ -48,8 +48,8 @@ public class ProductService {
     public ProductDto getProductById(Long productId) {
         Product product = productRepository.findById(productId)
                 .orElseThrow(() -> new ObjectNotFoundException("Product with id: " + productId + " not found"));
-        return new ProductDto(product.getId(), product.getName(), null,
-                null, product.getPrice().toString());
+        return new ProductDto(product.getId(), product.getName(), product.getDescription(),
+                product.getImage(), product.getPrice().toString());
     }
 
     public void removeProductById(Long productId) {
