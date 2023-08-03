@@ -31,4 +31,9 @@ public class OrderService {
         orderRepository.save(order);
         shoppingCart.clearShoppingCart();
     }
+
+    public List<OrderDto> getOrders() {
+        return orderRepository.findAll().stream().map(o -> new OrderDto(o.getId(), o.getCustomerFullName(), o.getCustomerEmail(),
+                o.getCity(), o.getZipCode(), o.getStreet(), o.getStreetNo(), o.getHomeNo(), o.getPrice().toString())).toList();
+    }
 }
