@@ -30,7 +30,7 @@
                         <td th:text="${order.id}"></td>
                         <td th:text="${order.firstName}"></td>
                         <td th:text="${order.lastName}"></td>
-                        <td th:text="${order.price}"></td>
+                        <td th:text="${order.price} + 'zł'"></td>
                         <td>
                             <form th:action="@{/admin/orders/details/__${order.id}__}" method="post">
                                 <input type="hidden" name="orderId" th:value="${order.id}"/>

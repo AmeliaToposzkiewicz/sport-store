@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body style="background-color: #D3D3D3">
+<div th:insert="fragments/navbar::nav"></div>
+
+<div class="card container" style="width: 50%; margin-bottom: 35px; margin-top: 25px;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" th:text="'Id zamówienia: ' + ${order.id}">Id</li>
+        <li class="list-group-item" th:text="'Imię i nazwisko: ' + ${order.firstName} + ' ' + ${order.lastName}">Full
+            name
+        </li>
+        <li class="list-group-item" th:text="'E-mail: ' + ${order.email}">E-mail</li>
+        <li class="list-group-item" th:text="'Ulica: ' + ${order.street}">Street</li>
+        <li class="list-group-item" th:text="'Numer domu: ' + ${order.streetNo}">Street No</li>
+        <li class="list-group-item" th:text="'Numer mieszkania: ' + ${order.homeNo}">Home No</li>
+        <li class="list-group-item" th:text="'Kod pocztowy i miasto: ' + ${order.zipCode} + ' ' + ${order.city}">Address</li>
+        <li class="list-group-item" th:text="'Kwota: ' + ${order.price} + 'zł'">Price</li>
+
+    </ul>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+</html>
