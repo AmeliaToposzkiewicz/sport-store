@@ -27,6 +27,9 @@ public class ProductService {
     public void addProduct(ProductDto productDto, MultipartFile multipartFile) {
         Product product = new Product(productDto.getName(), productDto.getDescription(), productDto.getImage(),
                 BigDecimal.valueOf(Double.parseDouble(productDto.getPrice())));
+        if (productDto.getId() != null) {
+            product.setId(product.getId());
+        }
         productRepository.save(product);
         saveProductImage(multipartFile);
     }
@@ -34,7 +37,9 @@ public class ProductService {
     private void saveProductImage(MultipartFile multipartFile) {
         Path uploads = Paths.get("./uploads");
         try {
-            Files.copy(multipartFile.getInputStream(), uploads.resolve(multipartFile.getOriginalFilename()));
+            if (multipartFile != null && multipartFile.getOriginalFilename() != null) {
+                Files.copy(multipartFile.getInputStream(), uploads.resolve(multipartFile.getOriginalFilename()));
+            }
         } catch (IOException e) {
             log.error(e.getMessage());
         }
