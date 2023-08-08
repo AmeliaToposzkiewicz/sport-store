@@ -14,7 +14,6 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.mock;
 
 @SpringBootTest
@@ -59,7 +58,7 @@ public class ProductServiceTest {
     }
 
     @Test
-    public void testGetProducts(){
+    public void testGetProducts() {
         //given
         ProductDto productDto1 = new ProductDto();
         productDto1.setName("Product1");
@@ -86,14 +85,14 @@ public class ProductServiceTest {
 
         //when
 
-        List<ProductDto> result =  productService.getProducts();
+        List<ProductDto> result = productService.getProducts();
 
         //then
         assertEquals(3, result.size());
     }
 
     @Test
-    public void getProductById(){
+    public void getProductById() {
         //given
         ProductDto productDto1 = new ProductDto();
         productDto1.setId(1L);
@@ -123,7 +122,7 @@ public class ProductServiceTest {
 
         //when
 
-        ProductDto result =  productService.getProductById(2L);
+        ProductDto result = productService.getProductById(2L);
 
         //then
         assertEquals(2L, result.getId());
@@ -165,7 +164,7 @@ public class ProductServiceTest {
         productService.removeProductById(1L);
 
         //then
-        List<ProductDto> products =  productService.getProducts();
+        List<ProductDto> products = productService.getProducts();
         assertEquals(2, products.size());
 
     }
