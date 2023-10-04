@@ -28,6 +28,8 @@ Admin:
 - Java 17
 - Spring Boot
 - Thymeleaf
+- HTML
+- Bootstrap
 - Maven 
 - MySQL 
 - Lombok
