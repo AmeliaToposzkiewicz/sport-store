@@ -5,6 +5,7 @@
 * [General Information](#general-information)
 * [Features](#features)
 * [Technologies Used](#technologies-used)
+* [Setup](#setup)
 
 ## General Information
 Simple Sport Store to manage various types of sports equipment.
@@ -34,3 +35,9 @@ Admin:
 - MySQL 
 - Lombok
 - Flyway
+
+## Setup
+Create environment variables:
+- DB_USER=your_database_user
+- DB_PASSWORD=password_of_specified_user
+- DB_URL=your_database_url
